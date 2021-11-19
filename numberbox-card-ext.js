@@ -116,7 +116,7 @@ onMouseDown(v) {
 	if( this.config.speed === undefined ){ this.config.speed=250;}
 	if( this.config.speed > 0 ){
 		this.onMouseUp();
-		this.rolling = setInterval(this.setNumb.bind(v), this.config.speed, this);		
+		this.rolling = setInterval(() => this.setNumb(v), this.config.speed, this);		
 	}
 }
 
