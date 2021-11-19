@@ -1,4 +1,4 @@
-# numberbox-card
+# numberbox-card-ext
 
 NumberBox for input sliders and number entities
 
