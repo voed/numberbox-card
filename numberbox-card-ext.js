@@ -110,6 +110,25 @@ setNumb(c){
 		}
 	}
 }
+	
+	onMouseDown(v) {
+	if( this.config.speed === undefined ){ this.config.speed=250;}
+	if( this.config.speed > 0 ){
+		this.onMouseUp();
+		if(v){
+			this.rolling = setInterval(this.incVal, this.config.speed, this);
+		}else{
+			this.rolling = setInterval(this.decVal, this.config.speed, this);
+		}
+	}
+}
+
+onMouseUp() {
+	if( this.config.speed === undefined ){ this.config.speed=250;}
+	if( this.config.speed > 0 ){
+		clearInterval(this.rolling);
+	}
+}
 
 publishNum(dhis){
 	const v=dhis.pending;
@@ -400,25 +419,6 @@ render() {
 `;
 }
 
-	
-onMouseDown(v) {
-	if( this.config.speed === undefined ){ this.config.speed=250;}
-	if( this.config.speed > 0 ){
-		this.onMouseUp();
-		if(v){
-			this.rolling = setInterval(this.incVal, this.config.speed, this);
-		}else{
-			this.rolling = setInterval(this.decVal, this.config.speed, this);
-		}
-	}
-}
-
-onMouseUp() {
-	if( this.config.speed === undefined ){ this.config.speed=250;}
-	if( this.config.speed > 0 ){
-		clearInterval(this.rolling);
-	}
-}
 
 updVal(v) {
 	if (!this.config || !this.hass) {return;}
