@@ -447,7 +447,7 @@ customElements.define("numberbox-card-editor", NumberBoxEditor);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-	type: 'numberbox-card-extended',
+	type: 'numberbox-card-ext',
 	name: 'Numberbox Card',
 	preview: false,
 	description: 'Replace number/input_number sliders with plus and minus buttons'
