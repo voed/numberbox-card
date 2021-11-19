@@ -11,7 +11,7 @@ to your `<config>/www/` folder and add the following to the `configuration.yaml`
 ```yaml
 lovelace:
   resources:
-    - url: /local/numberbox-card.js?v=1
+    - url: /local/numberbox-card-ext.js?v=1
       type: module
 ```
 
@@ -19,7 +19,7 @@ _OR_ install using [HACS](https://hacs.xyz/) and add this (if in YAML mode):
 ```yaml
 lovelace:
   resources:
-    - url: /hacsfiles/numberbox-card/numberbox-card.js
+    - url: /hacsfiles/numberbox-card/numberbox-card-ext.js
       type: module
 ```
 
