@@ -30,6 +30,7 @@ render() {
 	if(this.config.min === undefined){ this.config.min=this.stateObj.attributes.min;}
 	if(this.config.max === undefined){ this.config.max=this.stateObj.attributes.max;}
 	if(this.config.step === undefined){ this.config.step=this.stateObj.attributes.step;}
+	if(this.config.speed === undefined){ this.config.speed=this.stateObj.attributes.speed;}
 	if(!this.config.service){this.config.service="set_value";}
 	if(!this.config.param){this.config.param="value";}
 
