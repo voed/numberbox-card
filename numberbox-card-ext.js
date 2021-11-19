@@ -295,7 +295,7 @@ static getStubConfig() {
 	return {border: true};
 }
 
-} customElements.define('numberbox-card', NumberBox);
+} customElements.define('numberbox-card-ext', NumberBox);
 
 //Editor
 const includeDomains = ['input_number','number'];
@@ -441,14 +441,14 @@ updVal(v) {
 }
 
 }
-customElements.define("numberbox-card-editor", NumberBoxEditor);
+customElements.define("numberbox-card-ext-editor", NumberBoxEditor);
 
 })(window.LitElement || Object.getPrototypeOf(customElements.get("hui-masonry-view") ));
 
 window.customCards = window.customCards || [];
 window.customCards.push({
 	type: 'numberbox-card-ext',
-	name: 'Numberbox Card',
+	name: 'Numberbox Card Extended',
 	preview: false,
 	description: 'Replace number/input_number sliders with plus and minus buttons'
 });
