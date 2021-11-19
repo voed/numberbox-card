@@ -1,5 +1,5 @@
 ((LitElement) => {
-console.info('NUMBERBOX_CARD_EXT 3.0');
+console.info('NUMBERBOX_CARD_EXT 3.1');
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 class NumberBox extends LitElement {
