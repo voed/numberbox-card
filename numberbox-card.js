@@ -1,6 +1,5 @@
 ((LitElement) => {
 
-console.info('NUMBERBOX_CARD 3.0');
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
 class NumberBox extends LitElement {
@@ -70,12 +69,26 @@ renderNum(){
 	<section class="body">
 	<div class="main">
 		<div class="cur-box">
-		<ha-icon class="padl" icon="${this.config.icon_plus}" @click="${() => this.setNumb(1)}" >
+		<ha-icon class="padl" 
+			icon="${this.config.icon_plus}" 
+			@click="${() => this.setNumb(1)}" 
+			@mousedown="${() => this.onMouseDown(1)}"
+			@mouseup="${() => this.onMouseUp()}"
+			@touchstart="${() => this.onMouseDown(1)}"
+			@touchend="${() => this.onMouseUp()}"
+		>
 		</ha-icon>
 		<div class="cur-num-box" @click="${() => this.moreInfo('hass-more-info')}" >
 			<h3 class="cur-num ${(this.pending===false)? '':'upd'}" > ${this.niceNum()} </h3>
 		</div>
-		<ha-icon class="padr" icon="${this.config.icon_minus}" @click="${() => this.setNumb(0)}" >
+		<ha-icon class="padr"
+			icon="${this.config.icon_minus}"
+			@click="${() => this.setNumb(0)}"
+			@mousedown="${() => this.onMouseDown(0)}"
+			@mouseup="${() => this.onMouseUp()}"
+			@touchstart="${() => this.onMouseDown(0)}"
+			@touchend="${() => this.onMouseUp()}"
+		>
 		</ha-icon>
 		</div>
 	</div>
@@ -240,6 +253,7 @@ setConfig(config) {
 		step: config.step,
 		service: config.service,
 		param: config.param,
+		speed: config.speed
 	};
 }
 
@@ -386,6 +400,25 @@ render() {
 `;
 }
 
+	
+onMouseDown(v) {
+	if( this.config.speed === undefined ){ this.config.speed=250;}
+	if( this.config.speed > 0 ){
+		this.onMouseUp();
+		if(v){
+			this.rolling = setInterval(this.incVal, this.config.speed, this);
+		}else{
+			this.rolling = setInterval(this.decVal, this.config.speed, this);
+		}
+	}
+}
+
+onMouseUp() {
+	if( this.config.speed === undefined ){ this.config.speed=250;}
+	if( this.config.speed > 0 ){
+		clearInterval(this.rolling);
+	}
+}
 
 updVal(v) {
 	if (!this.config || !this.hass) {return;}
