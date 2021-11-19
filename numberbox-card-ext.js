@@ -97,7 +97,7 @@ renderNum(){
 }
 
 setNumb(c){
-	let v=this.pending; const a=this.stateObj.attributes;
+	let v=this.pending;
 	if( v===false ){ v=Number(this.state); v=isNaN(v)?this.config.min:v;}
 	let adval=c?(v + Number(this.config.step)):(v - Number(this.config.step));
 	adval=Math.round(adval*1000)/1000
