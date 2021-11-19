@@ -31,7 +31,7 @@ or added by clicking the "Add to lovelace" button on the HACS dashboard after in
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| type | string | **Required** | `custom:numberbox-card`
+| type | string | **Required** | `custom:numberbox-card-ext`
 | entity | string | **Required** | `input_number.my_slider` or `number.my_number`
 | name | string/bool | `friendly_name` | Override friendly name (set to `false` to hide)
 | icon | string/bool | `icon` | Override icon (set to `false` to hide)
@@ -58,7 +58,7 @@ or added by clicking the "Add to lovelace" button on the HACS dashboard after in
 ```
 type: entities
 entities:
-  - type: custom:numberbox-card
+  - type: custom:numberbox-card-ext
     entity: climate.heating
     icon: mdi:fire
     state: temperature
@@ -70,7 +70,7 @@ entities:
 
 type: entities
 entities:
-  - type: custom:numberbox-card
+  - type: custom:numberbox-card-ext
     entity: fan.smartfan_fan
     icon: mdi:fan
     state: percentage
@@ -96,13 +96,13 @@ entities:
     secondary_info: last-changed
   
   - entity: input_number.my_slider
-    type: 'custom:numberbox-card'
+    type: 'custom:numberbox-card-ext'
     icon: 'mdi:timelapse'
     secondary_info: last-changed
     unit: S
 
   - entity: input_number.my_slider
-    type: 'custom:numberbox-card'
+    type: 'custom:numberbox-card-ext'
     unit: time
 
   - entity: input_number.my_slider
@@ -120,7 +120,7 @@ style: |
 ```
 ![numberbox-card](https://github.com/htmltiger/numberbox-card/raw/main/example2.png)
 ```yaml
-- type: custom:numberbox-card
+- type: custom:numberbox-card-ext
   entity: input_number.my_slider
   name: My Title
   icon: 'mdi:fire'
