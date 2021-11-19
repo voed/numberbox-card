@@ -111,7 +111,7 @@ setNumb(c){
 	}
 }
 	
-	onMouseDown(v) {
+onMouseDown(v) {
 	if( this.config.speed === undefined ){ this.config.speed=250;}
 	if( this.config.speed > 0 ){
 		this.onMouseUp();
